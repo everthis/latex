@@ -1,0 +1,32 @@
+\documentclass[
+  fontsize=12pt  %
+ ,english        % 
+ ,headinclude    %
+ ,headsepline    % line between head an document text
+%,BCOR=12mm      % 
+]{scrbook}       % twosided, A4 paper
+
+\usepackage[latin9]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+
+\usepackage{blindtext} % provides blindtext with sectioning
+
+\usepackage{scrpage2}  % header and footer for KOMA-Script
+
+\clearscrheadfoot                 % deletes header/footer
+\pagestyle{scrheadings}           % use following definitions for header/footer
+% definitions/configuration for the header
+\rehead[]{This is my name}        % equal page, right position (inner) 
+\lohead[]{This is my name}        % odd   page, left  position (inner) 
+\lehead[]{this is page \pagemark} % equal page, left (outer) position
+\rohead[]{this is page \pagemark}
+% definitions/configuration for the footer
+\cefoot[]{center of the footer!}  % equal page, center position
+\cofoot[\pagemark]{\pagemark}     % odd   page, center position
+
+\begin{document}
+
+\Blinddocument
+
+\end{document}
